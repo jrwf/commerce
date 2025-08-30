@@ -1,0 +1,22 @@
+uuid: 6b6f5cb0-2f1d-4dfb-ad3c-6282cc332150
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - stark
+_core:
+  default_config_hash: ACjBZI5shAMiiUpsz-inLYVXDqNNXRnSzAWV3kV_8Hw
+id: stark_primary_local_tasks
+theme: stark
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Hlavní záložky'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

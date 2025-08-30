@@ -1,0 +1,15 @@
+uuid: b58ccb34-1366-4df9-ab4d-2b967b6afd30
+langcode: cs
+status: true
+dependencies: {  }
+name: '600_370'
+label: '600 x 370'
+effects:
+  4c98f04d-2f83-4bac-af14-71dfe39d5920:
+    uuid: 4c98f04d-2f83-4bac-af14-71dfe39d5920
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 370
+      anchor: center-center

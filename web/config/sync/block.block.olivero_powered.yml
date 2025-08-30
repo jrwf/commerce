@@ -1,0 +1,22 @@
+uuid: 24b7d11f-19ff-4320-9f99-39f16f98a56c
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: olivero_powered
+theme: olivero
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Běží na Drupalu'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,8 @@
+uuid: 9eab5488-410a-4802-91ee-da795874d0d7
+langcode: cs
+status: true
+dependencies: {  }
+id: secondary-nav
+label: 'Sekundární navigace'
+description: ''
+locked: false

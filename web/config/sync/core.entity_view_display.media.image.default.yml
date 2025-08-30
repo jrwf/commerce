@@ -1,0 +1,46 @@
+uuid: 7949d10b-f218-4494-9ef1-490427260d58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_popis_obrazku
+    - image.style.1500
+    - media.type.image
+    - responsive_image.styles.woodyt_article_gallery
+  module:
+    - colorbox
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_media_image:
+    type: colorbox_responsive
+    label: visually_hidden
+    settings:
+      colorbox_image_style: '1500'
+      colorbox_gallery: page
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+      colorbox_responsive_node_style: woodyt_article_gallery
+      colorbox_responsive_image_style: woodyt_article_gallery
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_popis_obrazku:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,194 @@
+<?php
+
+/**
+ * @file
+ * Commerce JW Auto SKU module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ */
+function commerceJw_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'commerce_product_variation') {
+    // Generuje SKU pouze pokud je prázdné (už by mělo být nastavené z formuláře)
+    if (empty($entity->getSku())) {
+      $generated_sku = commerceJw_generate_sku($entity);
+      $entity->setSku($generated_sku);
+    }
+  }
+}
+
+/**
+ * Generuje SKU pro product variation.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $variation
+ *   Product variation entity.
+ *
+ * @return string
+ *   Vygenerované SKU.
+ */
+function commerceJw_generate_sku(EntityInterface $variation) {
+  // Pokud má variation už produkt, použijeme ho
+  $product = $variation->getProduct();
+
+  // Pokud produkt není dostupný přímo, zkusíme ho získat jinak
+  if (!$product && method_exists($variation, 'get')) {
+    $product_id = $variation->get('product_id')->target_id ?? null;
+    if ($product_id) {
+      $product = \Drupal::entityTypeManager()->getStorage('commerce_product')->load($product_id);
+    }
+  }
+
+  if (!$product) {
+    // Fallback pokud není produkt dostupný
+    return 'AUTO-' . date('Ymd') . '-' . substr(time(), -4) . '-' . rand(100, 999);
+  }
+
+  $product_title = $product->getTitle();
+
+  // Vytvoření základního SKU z názvu produktu
+  $base_sku = commerceJw_create_base_sku($product_title);
+
+  // Přidání času pro jedinečnost
+  $sku_with_time = $base_sku . '-' . date('Ymd') . '-' . substr(time(), -4);
+
+  // Zajištění jedinečnosti SKU
+  $unique_sku = commerceJw_ensure_unique_sku($sku_with_time);
+
+  return $unique_sku;
+}
+
+/**
+ * Vytvoří základní SKU z názvu produktu.
+ *
+ * @param string $title
+ *   Název produktu.
+ *
+ * @return string
+ *   Základní SKU.
+ */
+function commerceJw_create_base_sku($title) {
+  // Převod na ASCII a odstranění diakritiky
+  $sku = \Drupal::service('pathauto.alias_cleaner')->cleanString($title);
+
+  // Převod na velká písmena a odstranění nepovolených znaků
+  $sku = strtoupper(preg_replace('/[^A-Z0-9]/', '', $sku));
+
+  // Omezení délky na 8 znaků
+  $sku = substr($sku, 0, 8);
+
+  // Pokud je SKU prázdné nebo moc krátké, použije se fallback
+  if (strlen($sku) < 3) {
+    $sku = 'PROD';
+  }
+
+  return $sku;
+}
+
+/**
+ * Zajistí jedinečnost SKU.
+ *
+ * @param string $base_sku
+ *   Základní SKU.
+ *
+ * @return string
+ *   Jedinečné SKU.
+ */
+function commerceJw_ensure_unique_sku($base_sku) {
+  $storage = \Drupal::entityTypeManager()->getStorage('commerce_product_variation');
+  $counter = 1;
+  $sku = $base_sku;
+
+  // Kontrola existence SKU v databázi
+  while (!empty($storage->loadByProperties(['sku' => $sku]))) {
+    $sku = $base_sku . '-' . $counter;
+    $counter++;
+
+    // Ochrana proti nekonečné smyčce
+    if ($counter > 1000) {
+      $sku = $base_sku . '-' . uniqid();
+      break;
+    }
+  }
+
+  return $sku;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function commerceJw_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Úprava SKU pole pro product variation
+  if (strpos($form_id, 'commerce_product_variation') !== FALSE) {
+    if (isset($form['sku'])) {
+
+      // MOŽNOST 1: Zrušení povinnosti a přidání validace (doporučeno)
+      $form['sku']['widget'][0]['value']['#required'] = FALSE;
+      $form['sku']['widget'][0]['value']['#description'] = t('Ponechte prázdné pro automatické generování SKU na základě názvu produktu.');
+      $form['sku']['widget'][0]['value']['#placeholder'] = t('Automaticky generováno...');
+
+      // Přidání vlastní validace a submit handleru
+      $form['#validate'][] = 'commerceJw_variation_form_validate';
+      $form['actions']['submit']['#submit'][] = 'commerceJw_variation_form_submit';
+
+      // MOŽNOST 2: Úplně skrýt pole (odkomentujte následující řádek pokud chcete SKU skrýt úplně)
+       $form['sku']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Vlastní validace formuláře product variation.
+ */
+function commerceJw_variation_form_validate($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $sku_value = $form_state->getValue(['sku', 0, 'value']);
+
+  // Pokud je SKU prázdné, vygenerujeme ho předem pro validaci
+  if (empty($sku_value)) {
+    try {
+      // Získání entity z form_state
+      $variation = $form_state->getFormObject()->getEntity();
+
+      // Pokud není produkt nastaven, zkusíme ho získat z formuláře
+      if (!$variation->getProduct()) {
+        $product_id = $form_state->getValue('product_id');
+        if (!empty($product_id[0]['target_id'])) {
+          $product = \Drupal::entityTypeManager()->getStorage('commerce_product')->load($product_id[0]['target_id']);
+          if ($product) {
+            $variation->set('product_id', $product->id());
+          }
+        }
+      }
+
+      $generated_sku = commerceJw_generate_sku($variation);
+
+      // Nastavení vygenerovaného SKU do form_state
+      $form_state->setValue(['sku', 0, 'value'], $generated_sku);
+
+      // Také nastavíme SKU přímo do entity
+      $variation->setSku($generated_sku);
+
+    } catch (\Exception $e) {
+      // Fallback SKU v případě chyby
+      $fallback_sku = 'AUTO-' . date('Ymd') . '-' . time();
+      $form_state->setValue(['sku', 0, 'value'], $fallback_sku);
+      \Drupal::logger('commerceJw')->warning('Chyba při generování SKU: @message', ['@message' => $e->getMessage()]);
+    }
+  }
+}
+
+/**
+ * Submit handler pro product variation form.
+ */
+function commerceJw_variation_form_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $sku_value = $form_state->getValue(['sku', 0, 'value']);
+
+  // Ještě jedna kontrola před uložením
+  if (empty($sku_value)) {
+    $variation = $form_state->getFormObject()->getEntity();
+    $generated_sku = commerceJw_generate_sku($variation);
+    $variation->setSku($generated_sku);
+  }
+}

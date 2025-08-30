@@ -1,0 +1,38 @@
+uuid: 37a928c2-a8bb-41b5-8502-25bb3da60cb6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery
+    - node.type.article
+  module:
+    - image
+id: node.article.field_gallery
+field_name: field_gallery
+entity_type: node
+bundle: article
+label: Galerie
+description: 'Pole pro nahrávání více obrázků do galerie.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: images/gallery
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

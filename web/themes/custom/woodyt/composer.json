@@ -1,0 +1,9 @@
+{
+    "name": "jrwf/woodyt",
+    "description": "Téma vzhledu pro Drupal.",
+    "type": "drupal-custom-theme",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^10 || ^11"
+    }
+}

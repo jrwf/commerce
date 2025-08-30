@@ -1,0 +1,24 @@
+uuid: 919e5b1b-1996-4d06-8893-75f861c12d44
+langcode: cs
+status: true
+dependencies:
+  config:
+    - image.style.500_350
+    - image.style.600_370
+  theme:
+    - woodyt
+id: image_intro_teaser
+label: 'Image - intro / teaser'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: '600_370'
+    breakpoint_id: woodyt.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: '500_350'
+    breakpoint_id: woodyt.extra_small
+    multiplier: 1x
+breakpoint_group: woodyt
+fallback_image_style: '600_370'

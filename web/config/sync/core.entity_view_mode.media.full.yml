@@ -1,0 +1,13 @@
+uuid: c41d9b4a-dcff-4d87-a060-ee4d3e3cf00f
+langcode: cs
+status: false
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: dTfAUHooYV0uOVPO3saGpgv-c5PppJXDwxvwRTJOycM
+id: media.full
+label: 'Plný obsah'
+description: ''
+targetEntityType: media
+cache: true

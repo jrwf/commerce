@@ -1,0 +1,8 @@
+name: Commerce JW Auto SKU
+type: module
+description: 'Automatické generování SKU pro Commerce produkty v Drupal 11'
+core_version_requirement: ^11
+package: Commerce (contrib)
+dependencies:
+  - commerce:commerce_product
+version: 1.0.0

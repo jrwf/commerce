@@ -1,0 +1,10 @@
+uuid: 86bce13f-a97b-40f0-a3d1-0d4547048d6d
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SAeixlV7Djy_Ggv_1P95TiqD4KUihA5icvU521tA84Y
+id: short
+label: 'Výchozí krátký formát data'
+locked: false
+pattern: 'j M Y - H:i'

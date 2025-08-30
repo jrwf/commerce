@@ -1,0 +1,21 @@
+name: AllenT
+type: theme
+base theme: woodyt
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core_version_requirement: ^10 || ^11
+libraries:
+  - allent/base
+regions:
+  mobil_menu: 'Mobil menu'
+  primary_menu: 'Primary menu'
+  header: 'Header'
+  secondary_menu: 'Secondary menu'
+  #  page_top: 'Page top'
+  #  page_bottom: 'Page bottom'
+  #  featured: 'Featured'
+  #  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: 'Footer'

@@ -1,0 +1,25 @@
+uuid: 87008f02-b223-45f7-88a3-b4ef8c8f78c1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - woodyt
+id: woodyt_paticka
+theme: woodyt
+region: footer
+weight: -7
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Patička
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 3072d29f-8aac-47e8-96ae-c9ce222df690
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_popis
+    - filter.format.full_html
+  module:
+    - text
+    - user
+id: user.user.field_popis
+field_name: field_popis
+entity_type: user
+bundle: user
+label: Popis
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

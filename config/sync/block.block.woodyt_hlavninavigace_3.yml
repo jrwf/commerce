@@ -1,0 +1,25 @@
+uuid: 7b25ee35-55b5-4901-b892-723ac5c4acc9
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - woodyt
+id: woodyt_hlavninavigace_3
+theme: woodyt
+region: mobil_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Hlavní navigace'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 72a80d18-316d-4649-a647-c2dd2cb42d8d
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_popis_obrazku
+    - media.type.images
+id: media.images.field_popis_obrazku
+field_name: field_popis_obrazku
+entity_type: media
+bundle: images
+label: 'Popis obrázku'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

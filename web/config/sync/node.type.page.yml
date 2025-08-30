@@ -1,0 +1,21 @@
+uuid: 4a3fd14c-5904-4bc2-b787-443dfdf9ab6f
+langcode: cs
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - secondary-nav
+    parent: 'main:'
+_core:
+  default_config_hash: i0snV8Wj--OkRW12UdachUiYiz3FbeMwHu_pZYfzKLc
+name: 'Základní stránka'
+type: page
+description: 'Pro statický obsah typu "O nás" použijte <em>základní stránky</em>.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

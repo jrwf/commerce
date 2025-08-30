@@ -1,0 +1,10 @@
+uuid: 172fd27a-f564-4d04-a3b6-48aa4449e1a2
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: Patička
+description: 'Odkazy na informace o webu'
+locked: true

@@ -1,0 +1,78 @@
+/* Autor a datum */
+.node--type-article footer.node__meta {
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Uvodni obrazek */
+.field--name-field-uvodni-obrazek {
+  margin: 0 0 1.5rem 0;
+  position: relative;
+  top: 0.5rem;
+}
+
+/* Úvodní obrázek a popis */
+.media--view-mode-uvodni-obrazek-u-clanku {
+  margin: 0;
+}
+
+/* Obrázek */
+.field--name-field-media-image {
+  margin-bottom: 1rem;
+}
+
+/* Popis úvodního obrazku */
+.field--name-field-popis-obrazku {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 160%;
+  color: var(--dark-color);
+}
+
+@media screen and (min-width: 576px) {
+  .field--name-field-uvodni-obrazek {
+    margin: 0 2rem 1.5rem 0;
+    position: relative;
+    top: 1rem;
+    /*width: 50%;*/
+    float: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .webform-submission-form {
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .field--name-field-uvodni-obrazek {
+    margin-bottom: 4rem;
+    overflow: hidden; /* Skrytí přetečení */
+  }
+
+  .field--name-field-uvodni-obrazek a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Skrytí přetečení */
+    width: 100%;
+    height: 370px; /* Zajištění, že obrázek se přizpůsobí */
+  }
+
+  .field--name-field-uvodni-obrazek img {
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease; /* Plynulá animace po dobu 0.3 sekund */
+  }
+
+  .field--name-field-uvodni-obrazek img:hover {
+    transform: scale(1.1); /* Zvětšení o 10% při najetí myší */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

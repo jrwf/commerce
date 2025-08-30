@@ -1,0 +1,7 @@
+name: 'JW'
+type: module
+description: 'Hlavní modul JW.'
+core_version_requirement: ^10 || ^11
+package: jw
+#dependencies:
+#  - jw

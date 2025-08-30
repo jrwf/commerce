@@ -1,0 +1,11 @@
+uuid: 135f89a2-fdae-49fe-832c-132ded1f7ab8
+langcode: cs
+status: true
+dependencies:
+  module:
+    - media
+id: media.uvodni_obrazek_u_clanku
+label: 'Úvodní obrázek u článku'
+description: 'Úvodní obrázek pro typ obsahu článek.'
+targetEntityType: media
+cache: true

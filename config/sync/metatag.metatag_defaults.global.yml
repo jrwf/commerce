@@ -1,0 +1,15 @@
+uuid: 89d25d57-26ac-46dc-9c03-0f4bd01f756d
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Globální
+tags:
+  canonical_url: '[current-page:url]'
+  og_determiner: '[current-page:metatag:og_determiner:value]'
+  og_site_name: '[current-page:metatag:og_site_name]'
+  og_title: '[current-page:metatag:og_title]'
+  og_url: '[current-page:metatag:og_url]'
+  robots: 'index, follow'

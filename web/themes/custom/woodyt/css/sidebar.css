@@ -1,0 +1,38 @@
+aside {
+  padding-top: 4rem;
+}
+
+aside nav {
+}
+
+aside nav ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+aside nav ul li {
+  margin: 0 0 0.5rem 0;
+}
+
+aside nav ul li a {
+  display: block;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.6rem;
+  background-color: var(--nav-color);
+  text-decoration: none;
+}
+
+aside nav ul li:first-child a {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+aside nav ul li:last-child a {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+aside nav ul li a:hover {
+  color: white;
+  background-color: var(--link-hover);
+}

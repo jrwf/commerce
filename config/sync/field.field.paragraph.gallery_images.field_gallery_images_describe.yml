@@ -1,0 +1,24 @@
+uuid: 461d38db-bea2-4646-87fd-ddcc80a4a5d5
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_images_describe
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.gallery_images
+  module:
+    - text
+id: paragraph.gallery_images.field_gallery_images_describe
+field_name: field_gallery_images_describe
+entity_type: paragraph
+bundle: gallery_images
+label: 'Gallery images describe'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

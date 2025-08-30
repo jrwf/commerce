@@ -1,0 +1,24 @@
+uuid: ae6208c3-1426-4369-956c-91455b6dd14f
+langcode: cs
+status: true
+dependencies:
+  config:
+    - image.style.300_x_200
+    - image.style.500_350
+  theme:
+    - woodyt
+id: default_responsive
+label: 'Default responsive'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 300_x_200
+    breakpoint_id: woodyt.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: '500_350'
+    breakpoint_id: woodyt.extra_small
+    multiplier: 1x
+breakpoint_group: woodyt
+fallback_image_style: '500_350'

@@ -1,0 +1,24 @@
+uuid: f045b339-abba-46a2-af92-a44511374082
+langcode: cs
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_recaptcha
+_core:
+  default_config_hash: ny8KDBpQ7WTQP5HpVp9sWYpm59FgHB9c6i7f1--uOfE
+id: recaptcha
+label: reCAPTCHA
+group: tracking
+info:
+  value: ''
+  format: full_html
+consentRequired: true
+purpose: ''
+placeholderMainText: 'This content is blocked because reCAPTCHA cookies have not been accepted.'
+placeholderAcceptText: 'Only accept reCAPTCHA cookies'
+processor: ''
+processorContact: ''
+processorUrl: 'https://developers.google.com/recaptcha'
+processorPrivacyPolicyUrl: 'https://policies.google.com/privacy?hl=cs'
+processorCookiePolicyUrl: ''

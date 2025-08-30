@@ -1,0 +1,25 @@
+uuid: 0302620e-7296-41e7-8f83-4346288ca1d1
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - allent
+id: allent_hlavninavigace_4
+theme: allent
+region: mobil_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Hlavní navigace'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

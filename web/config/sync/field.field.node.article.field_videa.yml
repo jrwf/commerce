@@ -1,0 +1,29 @@
+uuid: de0b7aad-5987-4304-8b1a-6ecd41b4635e
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_videa
+    - media.type.remote_video
+    - node.type.article
+id: node.article.field_videa
+field_name: field_videa
+entity_type: node
+bundle: article
+label: Videa
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: remote_video
+field_type: entity_reference

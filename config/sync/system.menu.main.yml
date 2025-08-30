@@ -1,0 +1,10 @@
+uuid: 4522023f-6da0-4de9-9c38-b2764bd7647d
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Hlavní navigace'
+description: 'Odkazy na hlavní sekce webu'
+locked: true

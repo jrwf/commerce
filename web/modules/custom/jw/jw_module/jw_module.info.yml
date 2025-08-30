@@ -1,0 +1,51 @@
+name: 'JW - zapnutí a základní nastavení modulů'
+type: module
+description: 'Zapíná a nastavuje základní moduly.'
+core_version_requirement: ^10 || ^11
+package: jw
+dependencies:
+  - jw
+  - module_filter
+  - admin_toolbar
+  - admin_toolbar_tools
+  - admin_toolbar_search
+  - inline_form_errors
+#  - media
+#  - media_library
+  - phpass
+#  - responsive_image
+  - syslog
+  - ctools
+  - ctools_views
+  - backup_migrate
+#  - calendar_views
+  - checklistapi
+  - editor_advanced_link
+  - pathauto
+  - redirect
+  - token
+  - twig_tweak
+  - view_password
+  - jquery_ui_accordion
+  - paragraphs
+  - field_group
+  - metatag
+  - metatag_open_graph
+  - metatag_views
+  - better_exposed_filters
+  - draggableviews
+  - views_bulk_operations
+  - views_conditional
+  - views_data_export
+  - views_infinite_scroll
+  - views_slideshow
+  - views_slideshow_cycle
+  - actions_permissions
+  - devel
+  - mail_login
+  - coffee
+
+
+#https://www.drupal.org/project/mailsystem
+#https://www.drupal.org/project/symfony_mailer_log
+#https://www.drupal.org/project/symfony_mailer

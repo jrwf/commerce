@@ -1,0 +1,20 @@
+uuid: d95ba97f-3d5c-45ec-adb3-8a9e93a180e9
+langcode: cs
+status: true
+dependencies:
+  module:
+    - cookies
+  theme:
+    - woodyt
+id: woodyt_cookiesui
+theme: woodyt
+region: content
+weight: 1
+provider: null
+plugin: cookies_ui_block
+settings:
+  id: cookies_ui_block
+  label: 'Cookies UI'
+  label_display: '0'
+  provider: cookies
+visibility: {  }

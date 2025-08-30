@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: cs
+uuid: ef40a25e-805a-406e-97ae-fca2f7c959eb
+name: drupal11prod
+mail: jiri.wolf@jw.cz
+slogan: 'Nějaký zajímavý slogan, na více řádků.'
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: cs
+mail_notification: ''

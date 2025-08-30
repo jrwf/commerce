@@ -1,0 +1,35 @@
+# field.storage.node.field_intro_image.yml
+uuid: 9263fc93-9f27-42e3-9157-c7af822f9495
+langcode: cs
+status: true
+dependencies:
+  module:
+    - image
+id: node.field_intro_image
+field_name: field_intro_image
+entity_type: node
+type: image
+settings:
+  uri_scheme: public
+  file_directory: 'images/uvodni-obrazek'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 9fd53288-bf0b-4a89-93f0-4bcfa6aba737
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - allent
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: allent_page_title
+theme: allent
+region: content
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Název stránky'
+  label_display: '0'
+  provider: core
+visibility: {  }

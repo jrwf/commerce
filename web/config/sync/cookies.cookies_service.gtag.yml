@@ -1,0 +1,24 @@
+uuid: 3c4fc06a-acc2-4761-b12f-955d7eaf0577
+langcode: cs
+status: true
+dependencies:
+  enforced:
+    module:
+      - cookies_gtag
+_core:
+  default_config_hash: lHZB6nbi9jwgzbywo19UKvtGNvMKA3nMWl6fE-rkZ3k
+id: gtag
+label: 'Google Tag Manager'
+group: performance
+info:
+  value: ''
+  format: full_html
+consentRequired: true
+purpose: ''
+placeholderMainText: 'This content is blocked because Google Tag Manager cookies have not been accepted.'
+placeholderAcceptText: 'Only accept Google Tag Manager cookies'
+processor: ''
+processorContact: ''
+processorUrl: 'https://tagmanager.google.com/'
+processorPrivacyPolicyUrl: 'https://policies.google.com/privacy?hl=cs'
+processorCookiePolicyUrl: ''

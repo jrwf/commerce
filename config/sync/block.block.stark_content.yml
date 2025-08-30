@@ -1,0 +1,22 @@
+uuid: e80b53a0-abb0-4e6e-ab1e-823aab5d46e2
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - stark
+_core:
+  default_config_hash: a0Yyx1GeyKarZ4T_yXQBR_ZFKnXiFLtxAb6gWLd8nr0
+id: stark_content
+theme: stark
+region: content
+weight: 3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Obsah hlavní stránky'
+  label_display: '0'
+  provider: system
+visibility: {  }

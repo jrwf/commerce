@@ -1,0 +1,40 @@
+uuid: 22c405e8-fccb-4a0a-a65d-720f5675ccd6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.webform_default
+  module:
+    - comment
+    - contact
+    - field_ui
+    - file
+    - filter
+    - media
+    - search
+    - shortcut
+    - system
+    - taxonomy
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Přihlášený uživatel'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer taxonomy_term display'
+  - 'change own username'
+  - 'delete own files'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'use text format webform_default'
+  - 'view media'

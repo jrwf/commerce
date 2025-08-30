@@ -1,0 +1,21 @@
+uuid: 0564100d-5917-46c3-9920-9bee2dee2462
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatagy
+    - node.type.page
+  module:
+    - metatag
+id: node.page.field_metatagy
+field_name: field_metatagy
+entity_type: node
+bundle: page
+label: Metatagy
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,283 @@
+<?php
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+
+/**
+ * Vytvoří field storage pro obrazová pole.
+ */
+function _jw_article_create_image_field_storages() {
+  $fields = [
+    'field_intro_image' => [
+      'cardinality' => 1,
+      'settings' => ['uri_scheme' => 'public'],
+    ],
+    'field_gallery' => [
+      'cardinality' => -1,
+      'settings' => ['uri_scheme' => 'public'],
+    ],
+  ];
+
+  foreach ($fields as $field_name => $config) {
+    if (!FieldStorageConfig::loadByName('node', $field_name)) {
+      FieldStorageConfig::create([
+        'field_name' => $field_name,
+        'entity_type' => 'node',
+        'type' => 'image',
+        'cardinality' => $config['cardinality'],
+        'translatable' => TRUE,
+        'settings' => $config['settings'],
+      ])->save();
+    }
+  }
+}
+
+/**
+ * Vytvoří field storage pro textová pole.
+ */
+function _jw_article_create_text_fields() {
+  $text_fields = [
+    'field_intro' => [
+      'type' => 'text_long',
+      'settings' => [
+        'max_length' => NULL,
+        'text_processing' => TRUE, // Umožňuje formátování
+      ],
+    ],
+    'field_content' => [
+      'type' => 'text_long',
+      'settings' => [
+        'max_length' => NULL,
+        'text_processing' => TRUE, // Umožňuje formátování
+      ],
+    ],
+  ];
+
+  foreach ($text_fields as $field_name => $config) {
+    if (!FieldStorageConfig::loadByName('node', $field_name)) {
+      FieldStorageConfig::create([
+        'field_name' => $field_name,
+        'entity_type' => 'node',
+        'type' => $config['type'],
+        'translatable' => TRUE,
+      ])->save();
+    }
+  }
+}
+
+/**
+ * Připojí pole ke konkrétním typům obsahu.
+ */
+function _jw_article_attach_fields_to_bundles($bundles) {
+  // Konfigurace pro jednotlivá pole
+  $field_configs = [
+    'field_intro_image' => [
+      'label' => t('Úvodní fotka'),
+      'description' => t('Toto je úvodní fotka článku.'),
+      'settings' => [
+        'file_directory' => 'images/uvodni-obrazek',
+        'max_filesize' => 2097152,
+        'max_resolution' => '2500x2500',
+        'min_resolution' => '100x100',
+        'file_extensions' => 'png gif jpg jpeg webp',
+      ],
+    ],
+    'field_gallery' => [
+      'label' => t('Galerie'),
+      'description' => t('Pole pro nahrávání více obrázků do galerie.'),
+      'settings' => [
+        'file_directory' => 'images/gallery',
+        'max_filesize' => 4194304,
+        'max_resolution' => '2500x2500',
+        'min_resolution' => '100x100',
+        'file_extensions' => 'png gif jpg jpeg webp',
+      ],
+    ],
+    // Přidání konfigurace pro textová pole
+    'field_intro' => [
+      'label' => t('Úvodník'),
+      'description' => t('Krátký úvod k článku.'),
+    ],
+    'field_content' => [
+      'label' => t('Obsah'),
+      'description' => t('Hlavní obsah článku.'),
+    ],
+  ];
+
+  foreach ($bundles as $bundle) {
+    foreach ($field_configs as $field_name => $config) {
+      if (!FieldConfig::loadByName('node', $bundle, $field_name)) {
+        FieldConfig::create([
+          'field_name' => $field_name,
+          'entity_type' => 'node',
+          'bundle' => $bundle,
+          'label' => $config['label'],
+          'description' => $config['description'],
+          // Nastavení povinnosti a překladu
+          'required' => FALSE,
+          'translatable' => TRUE,
+          // Další nastavení pro textová pole
+          //'settings'=> [],
+        ])->save();
+      }
+    }
+
+    // Nastavení pořadí polí ve formuláři
+    _jw_article_set_form_display_order($bundle);
+  }
+}
+
+/**
+ * Nastaví pořadí polí ve formuláři.
+ */
+/**
+ * Nastaví pořadí polí ve formuláři.
+ */
+function _jw_article_set_form_display_order($bundle) {
+  // Načtení nebo vytvoření form_display pro daný bundle
+  $form_display = EntityFormDisplay::load('node.' . $bundle . '.default');
+  if (!$form_display) {
+    $form_display = EntityFormDisplay::create([
+      'targetEntityType' => 'node',
+      'bundle' => $bundle,
+      'mode' => 'default',
+    ]);
+  }
+
+  // Přidání polí do form_display, pokud ještě neexistují
+  foreach (['field_intro_image', 'field_gallery', 'field_intro', 'field_content'] as $field_name) {
+    if (!$form_display->getComponent($field_name)) {
+      $form_display->setComponent($field_name, [
+        'type' => "image", // nebo "text_long" pro textová pole
+      ]);
+    }
+  }
+
+  // Nastavení pořadí: přesunout pole pod title
+  $components = $form_display->getComponents();
+
+  // Předpokládáme, že title je první pole
+  if (isset($components['title'])) {
+    // Přesuneme pole field_intro_image pod title
+    if (isset($components['field_intro_image'])) {
+      $components['field_intro_image']['weight'] = 1; // Hmotnost pod title
+    }
+
+    // Přesuneme pole field_gallery pod field_intro_image
+    if (isset($components['field_gallery'])) {
+      $components['field_gallery']['weight'] = 2; // Hmotnost pod field_intro_image
+    }
+
+    // Přesuneme pole field_intro pod field_gallery
+    if (isset($components['field_intro'])) {
+      $components['field_intro']['weight'] = 3; // Hmotnost pod field_gallery
+    }
+
+    // Přesuneme pole field_content pod field_intro
+    if (isset($components['field_content'])) {
+      $components['field_content']['weight'] = 4; // Hmotnost pod field_intro
+    }
+  }
+
+  // Uložení změn do form display
+  foreach ($components as $key => &$component) {
+    if (isset($component['weight'])) {
+      $form_display->setComponent($key, [
+        'weight' => $component['weight'],
+        // Můžete přidat další nastavení zde, pokud je potřeba
+      ]);
+    }
+  }
+
+  // Uložení form display s novým pořadím
+  $form_display->save();
+}
+
+/**
+ * Implementace hook_install().
+ */
+function jw_article_install(): void {
+  // Odstranění vestavěných polí
+  _jw_article_remove_built_in_fields(['article', 'page']);
+
+  // Vytvoření field storages (globální pro všechny typy obsahu)
+  _jw_article_create_image_field_storages();
+
+  // Vytvoření textových polí
+  _jw_article_create_text_fields();
+
+  // Propojení polí s konkrétními typy obsahu
+  _jw_article_attach_fields_to_bundles(['article', 'page']); // <-- Sem přidávejte další typy
+}
+
+/**
+ * Odstranění vestavěných polí (body a field_image) z typů obsahu.
+ */
+function _jw_article_remove_built_in_fields($content_types) {
+  foreach ($content_types as $bundle) {
+    // Odstranění pole body
+    if ($body_config = FieldConfig::loadByName('node', $bundle, 'body')) {
+      $body_config->delete();
+    }
+
+    // Odstranění pole field_image
+    if ($image_config = FieldConfig::loadByName('node', $bundle, 'field_image')) {
+      $image_config->delete();
+    }
+  }
+}
+
+/**
+ * Smazání field storage pro body a field_image.
+ */
+function jw_article_update_9001() {
+  $field_storages = ['body', 'field_image'];
+
+  foreach ($field_storages as $field_name) {
+    if ($field_storage = FieldStorageConfig::loadByName('node', $field_name)) {
+      $field_storage->delete();
+    }
+  }
+}
+
+/**
+ * Odstranění databázových tabulek pro pole.
+ */
+function jw_article_update_9002() {
+  $tables = [
+    // Tabulky pro body a field_image
+    'node__body',
+    'node_revision__body',
+    'node__field_image',
+    'node_revision__field_image'
+  ];
+
+  $database = \Drupal::database();
+  foreach ($tables as $table) {
+    if ($database->schema()->tableExists($table)) {
+      $database->schema()->dropTable($table);
+    }
+  }
+}
+
+/**
+ * Implementace hook_uninstall().
+ */
+function jw_article_uninstall() {
+  // Nejprve smazat všechny field instances
+  foreach (['article', 'page'] as $bundle) {
+    foreach (['field_intro_image', 'field_gallery'] as $field_name) {
+      if ($field_config = FieldConfig::loadByName('node', $bundle, $field_name)) {
+        $field_config->delete();
+      }
+    }
+  }
+
+  // Poté smazat field storages
+  foreach (['field_intro_image', 'field_gallery'] as $field_name) {
+    if ($field_storage = FieldStorageConfig::loadByName('node', $field_name)) {
+      $field_storage->delete();
+    }
+  }
+}

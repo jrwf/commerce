@@ -1,0 +1,20 @@
+uuid: c329f90d-82f9-4f4d-961a-ac10713d2135
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - jw_cms_olivero
+_core:
+  default_config_hash: dY7_Wihz9ohfBPKP554_brUfc9nPaecShShmC_VTGRM
+id: jw_cms_olivero_page_title
+theme: jw_cms_olivero
+region: sidebar_first
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Název stránky'
+  label_display: '0'
+  provider: core
+visibility: {  }

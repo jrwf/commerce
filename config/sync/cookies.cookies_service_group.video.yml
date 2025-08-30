@@ -1,0 +1,11 @@
+uuid: 16318f0c-2705-4b2e-bd91-ad5de933103d
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: w1WnCmP2Xfgx24xbx5u9T27XLF_ZFw5R0MlO-eDDPpQ
+id: video
+label: Videa
+weight: 40
+title: Video
+details: 'Video-hostingové služby pomáhají přidat na stránku bohaté mediální prvky.'

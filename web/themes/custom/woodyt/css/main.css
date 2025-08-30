@@ -1,0 +1,198 @@
+:root {
+  /* Hlavní modrá paleta */
+  --primary-color: #2378b1;      /* základní modrá barva webu */
+  /*--primary-color: #2a8bcb;      !* základní modrá barva webu *!*/
+  --primary-light: #4ba1da;      /* světlejší odstín primary barvy */
+  --primary-lighter: #66afdf;    /* nejsvětlejší odstín primary barvy */
+  --primary-dark: #216d9f;       /* tmavší odstín primary barvy */
+  --primary-darker: #1d618d;     /* nejtmavší odstín primary barvy */
+
+  /* Ostatní barvy */
+  --secondary-color: #64748b;    /* druhotná/podpůrná barva pro méně důležité elementy */
+  --accent-color: #f59e0b;       /* akcentní barva pro výrazné zvýraznění (CTA tlačítka, notifikace) */
+  --background-color: #ffffff;   /* základní barva pozadí celé stránky */
+  --text-color: #1f2937;         /* hlavní barva textu */
+  --border-color: #e5e7eb;       /* barva ohraničení a rámečků */
+  --error-color: #ef4444;        /* barva pro chybové hlášky a stavy */
+  --success-color: #10b981;      /* barva pro úspěšné akce a stavy */
+  --header-bg: #1f2937;          /* barva pozadí hlavičky */
+
+  /* Neutral stupnice - neutrální odstíny šedé barvy pro pozadí, text a další prvky */
+  --color-neutral-50: #f9fafb;   /* nejsvětlejší šedá - pozadí stránek */
+  --color-neutral-100: #f3f4f6;  /* světlá šedá - světlé pozadí */
+  --color-neutral-500: #6b7280;  /* střední šedá - méně důležitý text */
+  --color-neutral-700: #444951;  /* střední šedá - méně důležitý text */
+  --color-neutral-900: #111827;  /* tmavá šedá - důležitý text */
+
+  /* Surface systém */
+  --color-surface: #ffffff;      /* barva povrchů (karet, panelů, modalů) */
+  --color-on-surface: #1f2937;   /* barva textu na povrchu - zajišťuje dostatečný kontrast */
+
+  /* Aliasy pro konzistenci a snadnější použití */
+  --text-muted: var(--color-neutral-500);        /* méně důležitý text (popisky, datum, pomocné texty) */
+  --nav-color: var(--primary-dark);             /* barva navigace */
+  --footer-color: var(--primary-dark);             /* barva navigace */
+  --button-primary: var(--primary-color);        /* barva hlavních tlačítek */
+  --button-secondary: var(--color-neutral-500);  /* barva sekundárních tlačítek */
+  --link-color: var(--color-neutral-900);            /* barva odkazů */
+  --link-hover: var(--primary-darker);             /* barva odkazů při hover */
+  --link-active: var(--primary-darker);             /* barva odkazů při active */
+  --color-brand: var(--primary-color);           /* brandová barva */
+  --color-interactive: var(--primary-color);     /* barva interaktivních prvků */
+  --color-interactive-hover: var(--primary-dark); /* barva interaktivních prvků při hover */
+
+  --max-width: 1100px;
+  --border-radius: 0.7rem;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem; /* 16px */
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Basic Elements */
+h1, h2, h3, h4, h5, h6 {
+  /*margin-top: 0;*/
+  margin: 1.8rem 0;
+  font-weight: 600;
+  clear: both;
+}
+
+h1 {
+  font-size: 2.8rem;
+  /*font-size: 3.2rem;*/
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.4rem;
+  /*font-size: 2.8rem;*/
+  /*line-height: 160%;*/
+}
+
+h3 {
+  font-size: 2rem;
+  /*line-height: 160%;*/
+}
+
+h4 {
+  font-size: 1.8rem;
+  /*line-height: 160%;*/
+}
+
+p {
+  /*margin-top: 0;*/
+  /*margin-bottom: 1rem;*/
+  /*font-size: 1.8rem;*/
+  /*line-height: 160%;*/
+  margin: 1.8rem 0;
+  line-height: 170%;
+  font-size: 1.8rem;
+  clear: both;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  display: block;
+  /*background-color: var(--link-color);*/
+}
+
+.menu--account {
+  margin-bottom: 10rem;
+}
+
+.menu--account ul li a {
+  background-color: var(--accent-color);
+  color: black;
+}
+
+picture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1; /* umístí obrázek pod obsah */
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  /*object-fit: cover; !* zachová poměr stran a zajistí, že obrázek pokryje celou plochu *!*/
+  object-position: center; /* vycentruje obrázek */
+  border-bottom: 20px solid #d6d6d6;
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2.8rem;
+  }
+
+  h4 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

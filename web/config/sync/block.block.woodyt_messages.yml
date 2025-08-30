@@ -1,0 +1,22 @@
+uuid: 6b8bf9f8-30ef-4994-8bb3-5ca7e28ea036
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - woodyt
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: woodyt_messages
+theme: woodyt
+region: content
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Stavové zprávy'
+  label_display: '0'
+  provider: system
+visibility: {  }

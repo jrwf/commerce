@@ -1,0 +1,185 @@
+header {
+  margin: 0 0 1rem 0;
+  /*padding: 1rem 0 0 0;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header is above other content */
+  background-color: var(--primary-color);
+}
+
+/* Header */
+header .region.region-header {
+}
+
+.header {
+  margin: 0 1rem 0 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-radius: var(--border-radius);
+}
+
+#block-jw-theme-site-branding {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block-system-branding-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 70px;
+}
+
+.header .phone-mail {
+  font-weight: normal;
+  color: white;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  background-color: var(--primary-dark);
+  width: fit-content;
+  border-radius: var(--border-radius);
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0.3rem 1rem;
+  line-height: 100%;
+}
+
+.header .phone-mail a {
+  font-size: 1.4rem;
+  display: block;
+  color: white;
+  text-decoration: underline;
+  padding: 0.7rem 2rem;
+  margin: 0;
+  line-height: 100%;
+}
+
+.site-slogan {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: none;
+}
+
+.burger {
+  width: 33px;
+  height: 27px;
+  margin: 0 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*position: absolute;*/
+  /*top: 20px;*/
+  /*right: 10px;*/
+}
+
+.burger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  margin: 0 0 0 0;
+  padding: 0;
+  line-height: 100%;
+}
+
+@media screen and (min-width: 450px) {
+}
+
+@media screen and (min-width: 576px) {
+  .header-phone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header .phone-mail {
+    top: 95px;
+  }
+
+}
+
+@media screen and (min-width: 767px) {
+  header {
+    margin: 0 0 1rem 0;
+    padding-top: 1rem;
+    position: relative;
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+  }
+
+  .header {
+    margin: 0 2rem 0 2rem;
+    width: calc(100% - 4rem);
+    max-width: var(--max-width);
+    background-color: transparent;
+    background-color: silver;
+  }
+
+  .header .phone-mail {
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 0;
+  }
+
+  .header .phone-mail span {
+    display: none;
+  }
+
+  .header .phone-mail a {
+    font-size: 1.6rem;
+  }
+
+  .block-system-branding-block {
+    width: 100%;
+    margin: 0;
+  }
+
+  .site-logo {
+    margin: 0 2rem 0 0;
+    flex: 0 1 100px;
+    display: flex;
+    align-items: center;
+  }
+
+
+  .name-slogan {
+    width: 100%;
+  }
+
+  .site-name {
+    font-size: 3rem;
+  }
+
+  .site-slogan {
+    font-size: 2rem;
+    display: block;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .path-frontpage header {
+    /*height: 300px;*/
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

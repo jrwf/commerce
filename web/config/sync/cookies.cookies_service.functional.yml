@@ -1,0 +1,21 @@
+uuid: 7976a86f-dc44-4a1d-b39d-e60f46668336
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: N-O3629vb-jExOxfM0FYcfPzEu6QVzgWHMm06jMERLg
+id: functional
+label: 'Required functional'
+group: functional
+info:
+  value: "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th width=\"15%\">Jméno Cookie</th>\r\n\t\t\t<th width=\"15%\">Výchozí doba platnosti</th>\r\n\t\t\t<th>Popis</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><code dir=\"ltr\" translate=\"no\">SSESS&lt;ID&gt;</code></td>\r\n\t\t\t<td>1 měsíc</td>\r\n\t\t\t<td>Pokud jste na těchto webových stránkách přihlášeni, je k identifikaci a připojení vašeho prohlížeče k vašemu uživatelskému účtu na serveru těchto webových stránek vyžadován soubor session cookie.</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><code dir=\"ltr\" translate=\"no\">cookiesjsr</code></td>\r\n\t\t\t<td>1 rok</td>\r\n\t\t\t<td>Když jste poprvé navštívili tyto webové stránky, byli jste požádáni o souhlas s používáním několika služeb (včetně služeb třetích stran), které vyžadují ukládání údajů do vašeho prohlížeče (soubory cookie, místní úložiště). Vaše rozhodnutí o každé službě (povolit, zamítnout) se ukládá do tohoto souboru cookie a je znovu použito při každé návštěvě těchto webových stránek.</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n"
+  format: full_html
+consentRequired: false
+purpose: 'Essential functional cookies to provide general functionality'
+placeholderMainText: 'This content is blocked because required functional cookies have not been accepted.'
+placeholderAcceptText: 'Only accept required functional cookies'
+processor: ''
+processorContact: ''
+processorUrl: ''
+processorPrivacyPolicyUrl: ''
+processorCookiePolicyUrl: ''

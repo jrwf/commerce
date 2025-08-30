@@ -1,0 +1,8 @@
+# Schema for the configuration files of the AllenT theme.
+allent.settings:
+  type: theme_settings
+  label: 'AllenT settings'
+  mapping:
+    example:
+      type: string
+      label: Example

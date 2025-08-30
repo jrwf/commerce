@@ -1,0 +1,47 @@
+uuid: cc2b2b64-a360-4285-89a4-e25c717aedaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.uvodni_obrazek_u_clanku
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_popis_obrazku
+    - image.style.1500_1000
+    - image.style.600_370
+    - media.type.image
+  module:
+    - colorbox
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.uvodni_obrazek_u_clanku
+targetEntityType: media
+bundle: image
+mode: uvodni_obrazek_u_clanku
+content:
+  field_media_image:
+    type: colorbox
+    label: hidden
+    settings:
+      colorbox_image_style: '1500_1000'
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+      colorbox_node_style: '600_370'
+      colorbox_node_style_first: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_popis_obrazku:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

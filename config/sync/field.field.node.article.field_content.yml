@@ -1,0 +1,24 @@
+uuid: 4db0d161-4f83-4f6b-98bd-c034e3d68790
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - filter.format.full_html
+    - node.type.article
+  module:
+    - text
+id: node.article.field_content
+field_name: field_content
+entity_type: node
+bundle: article
+label: Obsah
+description: 'Hlavní obsah článku.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

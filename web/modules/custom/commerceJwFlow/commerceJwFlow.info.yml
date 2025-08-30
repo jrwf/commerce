@@ -1,0 +1,8 @@
+name: 'Commerce JW Flow'
+type: module
+description: 'Vlastní checkout flow pro Commerce'
+core_version_requirement: ^9 || ^10 || ^11
+dependencies:
+  - commerce:commerce_checkout
+  - commerce:commerce_order
+  - commerce:commerce_payment

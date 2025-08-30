@@ -1,0 +1,98 @@
+uuid: b8666e90-28d5-44f8-aa75-7e7efbac33ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.article.comment
+    - field.field.node.article.field_content
+    - field.field.node.article.field_galerie_s_popisky
+    - field.field.node.article.field_gallery
+    - field.field.node.article.field_intro
+    - field.field.node.article.field_intro_image
+    - field.field.node.article.field_metatagy
+    - field.field.node.article.field_tags
+    - image.style.1500
+    - image.style.1500_1000
+    - image.style.150_100
+    - node.type.article
+  module:
+    - comment
+    - image
+    - photoswipe
+    - photoswipe_dynamic_caption
+    - text
+    - user
+_core:
+  default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  comment:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_gallery:
+    type: photoswipe_field_formatter
+    label: hidden
+    settings:
+      photoswipe_thumbnail_style_first: ''
+      photoswipe_thumbnail_style: '150_100'
+      photoswipe_image_style: '1500'
+      photoswipe_reference_image_field: ''
+      photoswipe_view_mode: default
+    third_party_settings:
+      photoswipe_dynamic_caption:
+        photoswipe_caption: alt
+        photoswipe_caption_custom: ''
+    weight: 3
+    region: content
+  field_intro:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_intro_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: '1500_1000'
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  field_galerie_s_popisky: true
+  field_metatagy: true
+  langcode: true

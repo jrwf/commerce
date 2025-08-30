@@ -1,0 +1,19 @@
+uuid: b4e3234e-8cea-40b7-972a-84005b7e309f
+langcode: cs
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_popis_obrazku
+field_name: field_popis_obrazku
+entity_type: media
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

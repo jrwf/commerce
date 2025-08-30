@@ -1,0 +1,12 @@
+uuid: 3e2d8a5f-ec06-4e37-97d5-f8cc932b331e
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MvQPTbQx0Vxwy0ordSHyixdZmLCMpvMdLD69dlwkrKc
+id: user
+label: Uživatel
+tags:
+  canonical_url: '[user:url]'
+  description: '[site:name]'
+  title: '[user:display-name] | [site:name]'

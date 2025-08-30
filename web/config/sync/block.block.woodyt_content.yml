@@ -1,0 +1,22 @@
+uuid: d79ec754-ee4d-45b7-b6ed-b1be9d172db9
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - woodyt
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: woodyt_content
+theme: woodyt
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Obsah hlavní stránky'
+  label_display: '0'
+  provider: system
+visibility: {  }

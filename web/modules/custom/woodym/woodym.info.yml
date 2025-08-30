@@ -1,0 +1,5 @@
+name: 'WoodyM'
+type: module
+description: 'Výchozí modul pro produkční instalaci Drupalu 11.'
+package: Custom
+core_version_requirement: ^10 || ^11

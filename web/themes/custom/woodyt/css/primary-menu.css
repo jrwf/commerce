@@ -1,0 +1,103 @@
+.region.region-primary-menu {
+  margin: 0 2rem 0 2rem;
+  padding: 0 1rem;
+  display: none;
+  background-color: var(--nav-color);
+  width: calc(100% - 4rem);
+  border-radius: 0.7rem;
+}
+
+.region.region-primary-menu nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+  /*max-width: calc(var(--max-width) - 2rem);*/
+  max-width: var(--max-width);
+  /*border: 1px solid red*/
+}
+
+.region.region-primary-menu nav ul {
+  /*flex-direction: column;*/
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: none;
+}
+
+.region.region-primary-menu nav ul li {
+  list-style: none;
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: normal;
+  border-right: 1px solid var(--primary-lighter);
+}
+
+.region.region-primary-menu nav ul li:last-child {
+  border-right: none;
+}
+
+.region.region-primary-menu nav ul li a {
+  color: white;
+  padding: 0.7rem 2rem;
+  margin: 0;
+  display: block;
+  /*background-color: var(--link-color);*/
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+.region.region-primary-menu nav ul li a:hover {
+  background-color: var(--link-hover);
+  color: white;
+}
+
+.region.region-primary-menu nav ul li a.is-active {
+  /*background-color: var(--link-active);*/
+  color: white;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+  .region.region-primary-menu {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .region.region-primary-menu nav ul {
+    width: 100%;
+    flex-direction: row;
+    /*background-color: var(--primary-color);*/
+    display: flex;
+  }
+
+  .region.region-primary-menu nav ul li {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .region.region-primary-menu li a {
+    padding: 1.5rem 3rem;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .region.region-primary-menu {
+    max-width: 90%;
+    margin: 0 auto 1rem auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+}

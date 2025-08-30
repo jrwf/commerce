@@ -1,0 +1,22 @@
+uuid: 4d379bab-3a22-4cda-babe-90098a32f111
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - jw_cms_olivero
+_core:
+  default_config_hash: 3KAyDgB3FHENrBwroAUcCPvkfPHBMFcRDnsZFyFMuwc
+id: jw_cms_olivero_secondary_local_tasks
+theme: jw_cms_olivero
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Sekundární záložky'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

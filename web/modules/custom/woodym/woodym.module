@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Hlavní soubor modulu wooodym.
+ */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function woodym_theme($existing, $type, $theme, $path): array
+{
+  return [
+    'woodym_contact_page' => [
+      'template' => 'woodym-contact-page',
+      'variables' => [
+        'data' => NULL,
+      ],
+    ],
+  ];
+}

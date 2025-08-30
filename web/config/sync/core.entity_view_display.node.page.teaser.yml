@@ -1,0 +1,43 @@
+uuid: 2f84f5e1-80e6-455b-9371-0dd1a76ee016
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_content
+    - field.field.node.page.field_galerie
+    - field.field.node.page.field_uvodni_obrazek
+    - field.field.node.page.field_videa
+    - image.style.300_x_200
+    - node.type.page
+  module:
+    - media
+    - user
+_core:
+  default_config_hash: 8BgdRtLbtQ0F__o0FHSH0Mx5fvXOra9tfT1GmNKbRYw
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  field_uvodni_obrazek:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: 300_x_200
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_content: true
+  field_galerie: true
+  field_videa: true
+  langcode: true

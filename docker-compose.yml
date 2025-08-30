@@ -1,0 +1,60 @@
+version: '3.6'
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: commerce-app
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./.docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+    working_dir: /var/www/html
+    # Odkomentujte tuto řádku pro spuštění kontejneru pod stejným UID/GID jako hostitelský uživatel.
+    # Ujistěte se, že proměnné UID a GID jsou nastaveny (např. v .env souboru nebo při spuštění docker-compose).
+    user: "${UID}:${GID}"
+    environment:
+      XDEBUG_MODE: debug
+      # Nastavte npm cache do adresáře, ke kterému má váš uživatel přístup (uvnitř volume).
+      NPM_CONFIG_CACHE: "/var/www/html/.npm-cache"
+      # Nastavte Composer cache do adresáře, ke kterému má váš uživatel přístup (uvnitř volume).
+      COMPOSER_CACHE_DIR: "/var/www/html/.composer-cache"
+    # Přidejte entrypoint pro řešení problému s oprávněními pro cache adresáře uvnitř volume.
+    entrypoint: >
+      /bin/sh -c "
+        # Zajistíme správná oprávnění pro npm cache
+        if [ -d '/.npm' ]; then
+          chown -R ${UID:-1000}:${GID:-1000} /.npm
+        fi
+        mkdir -p /var/www/html/.npm-cache
+        chown -R ${UID:-1000}:${GID:-1000} /var/www/html/.npm-cache
+        # Zajistíme správná oprávnění pro composer cache
+        mkdir -p /var/www/html/.composer-cache
+        chown -R ${UID:-1000}:${GID:-1000} /var/www/html/.composer-cache
+        # Pokračujeme s normálním spuštěním
+        exec apache2-foreground
+      "
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - database
+
+  database:
+    container_name: commerce-mysql
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drupal
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./.docker/mysql:/var/lib/mysql
+
+  adminer:
+    container_name: commerce-adminer
+    image: adminer
+    ports:
+      - "3000:8080"
+    depends_on:
+      - database

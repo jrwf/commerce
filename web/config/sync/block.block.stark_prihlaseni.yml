@@ -1,0 +1,20 @@
+uuid: 7b463d00-8d4c-411c-88e1-d45f8c435991
+langcode: cs
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - stark
+id: stark_prihlaseni
+theme: stark
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: Přihlášení
+  label_display: visible
+  provider: user
+visibility: {  }

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for Commerce JW Auto SKU module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function commerceJw_install() {
+  \Drupal::messenger()->addMessage(t('Commerce JW Auto SKU modul byl úspěšně nainstalován. SKU se nyní bude automaticky generovat pro nové product variations.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function commerceJw_uninstall() {
+  \Drupal::messenger()->addMessage(t('Commerce JW Auto SKU modul byl odinstalován. Stávající SKU zůstanou beze změn.'));
+}

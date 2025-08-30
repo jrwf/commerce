@@ -1,0 +1,20 @@
+uuid: 0a2ecf6b-94a3-4a2f-93e6-397bb6db1726
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - woodyt
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: woodyt_page_title
+theme: woodyt
+region: content
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Název stránky'
+  label_display: '0'
+  provider: core
+visibility: {  }

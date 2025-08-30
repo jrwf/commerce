@@ -1,0 +1,16 @@
+uuid: 6897d2c2-c5fa-4106-9f7a-1d316c726e4d
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6Qope5wG7HUpV0tPOBMtDI_GZkHFcF1Xj4hgD9Cu_hM
+id: image
+label: Obrázek
+description: 'Zařazuje obrázkový soubor do knihovny médií k opětovnému použití.'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map:
+  name: name

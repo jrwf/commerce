@@ -1,0 +1,22 @@
+uuid: e2aa7cbb-57c0-4ffe-b864-14ec5ecd3b4a
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+id: nastaveni_pro_stranky
+label: 'Nastavení pro stránky.'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  a115e9c0-1c5a-4dc0-bd67-8bded1521c71:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a115e9c0-1c5a-4dc0-bd67-8bded1521c71
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }

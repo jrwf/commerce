@@ -1,0 +1,12 @@
+# my_custom_checkout.info.yml
+
+name: 'My Custom Checkout'
+type: module
+description: 'Poskytuje vlastní checkout flow pro Drupal Commerce.'
+core_version_requirement: '^10 || ^11'
+package: 'Commerce'
+
+# Tento modul nemůže fungovat bez modulu Commerce Checkout.
+# Drupal zajistí, že bude vždy zapnutý spolu s tím naším.
+dependencies:
+  - commerce:commerce_checkout

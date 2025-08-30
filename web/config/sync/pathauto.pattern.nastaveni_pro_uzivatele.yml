@@ -1,0 +1,14 @@
+uuid: ca53442c-0d11-4936-8fac-adc2eca015d9
+langcode: cs
+status: true
+dependencies:
+  module:
+    - user
+id: nastaveni_pro_uzivatele
+label: 'Nastavení pro uživatele.'
+type: 'canonical_entities:user'
+pattern: '[user:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

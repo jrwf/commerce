@@ -1,0 +1,22 @@
+uuid: 548b677e-edde-41f7-aa84-0734ae0e866f
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - allent
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: allent_content
+theme: allent
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Obsah hlavní stránky'
+  label_display: '0'
+  provider: system
+visibility: {  }

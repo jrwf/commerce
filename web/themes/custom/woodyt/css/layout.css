@@ -1,0 +1,137 @@
+.dialog-off-canvas-main-canvas {
+}
+
+.dialog-off-canvas-main-canvas > .layout-container {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+/* Main */
+/* Zajištění základního rozvržení pro mobilní zobrazení */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* Mobilní zobrazení: všechny bloky pod sebou */
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: var(--border-radius);
+  padding-top: 0;
+}
+
+/* Zajištění výchozího pořadí na mobilních zařízeních */
+.layout-content {
+  padding: 0;
+  order: 1; /* Zobrazení jako první */
+  width: 100%; /* Zabírá celou šířku */
+}
+
+.layout-sidebar-first {
+  order: 2; /* Zobrazení jako druhý blok */
+  width: 100%; /* Zabírá celou šířku */
+  display: none; /* Skryto na mobilních zařízeních */
+}
+
+.layout-sidebar-second {
+  order: 3; /* Zobrazení jako třetí blok */
+  width: 100%; /* Zabírá celou šířku */
+  display: none; /* Skryto na mobilních zařízeních */
+}
+
+/* Natavení paddingu pro regiony */
+/*header .region.region-header,*/
+main .region.region-content,
+.region.region-sidebar-first,
+.region.region-sidebar-second,
+footer {
+  padding: 1rem;
+}
+
+/*
+.region-content {
+  padding: 3rem 2rem;
+}
+*/
+
+main .region.region-content {
+  padding: 1rem 1rem 4rem 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  main .region.region-content {
+    min-height: 700px; /* Minimální výška obsahu */
+  }
+
+}
+
+@media screen and (min-width: 767px) {
+  .layout-container,
+  .dialog-off-canvas-main-canvas > .layout-container {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  main {
+    flex-direction: row; /* Přepnutí na řádkové zobrazení */
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .layout-sidebar-first {
+    order: 1; /* Zobrazení vlevo */
+    /*width: 25%; !* Šířka sloupce 25% *!*/
+    width: 250px;
+    flex-shrink: 0; /* Zamezení automatickému zmenšení */
+  }
+
+  .layout-sidebar-second {
+    order: 3; /* Zobrazení vlevo */
+    /*width: 25%; !* Šířka sloupce 25% *!*/
+    width: 250px;
+    flex-shrink: 0; /* Zamezení automatickému zmenšení */
+}
+
+  .layout-content {
+    order: 2; /* Zobrazení uprostřed */
+    flex-grow: 1; /* Zabírá zbývající prostor */
+    width: 250px;
+  }
+
+  main .region.region-content {
+    padding: 5rem 3rem;
+  }
+
+  .layout-sidebar-first,
+  .layout-sidebar-second {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .layout-sidebar-first,
+  .layout-sidebar-second {
+    width: 270px;
+  }
+
+  main .region.region-content {
+    padding: 5rem 5rem;
+  }
+
+}
+
+/* Pro větší obrazovky: přepnutí na sidebary po stranách */
+@media (min-width: 1100px) {
+}
+
+/* Speciální případ: Pokud není sidebar-first ani sidebar-second, obsah zabírá celý prostor */
+main:not(:has(.layout-sidebar-first)):not(:has(.layout-sidebar-second)) .layout-content {
+  width: 100%;
+}
+
+
+

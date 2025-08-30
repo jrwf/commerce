@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for JW Article module.
+ */
+function jw_article_page_attachments(array &$attachments) {
+//  $attachments['#attached']['library'][] = 'your_module/custom_css';
+}

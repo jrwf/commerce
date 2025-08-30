@@ -1,0 +1,44 @@
+uuid: feb1c0c1-548c-42ab-87b4-b8bc1ea17e91
+langcode: cs
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.images.field_media_image
+    - field.field.media.images.field_popis_obrazku
+    - image.style.300_x_200
+    - media.type.images
+  module:
+    - colorbox
+id: media.images.media_library
+targetEntityType: media
+bundle: images
+mode: media_library
+content:
+  field_media_image:
+    type: colorbox
+    label: above
+    settings:
+      colorbox_image_style: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+      colorbox_node_style: 300_x_200
+      colorbox_node_style_first: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_popis_obrazku:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

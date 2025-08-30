@@ -1,0 +1,13 @@
+uuid: c41979c5-a445-450f-bc09-80567cfb0219
+langcode: cs
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: DyypzTfThX10FFQw-399qPfEbLLyrhXgQrKPVsmAoJ4
+id: user_block_user_action
+label: 'Zablokovat vybrané uživatele.'
+type: user
+plugin: user_block_user_action
+configuration: {  }

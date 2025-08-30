@@ -1,0 +1,71 @@
+# Soubor: web/modules/custom/commerceJwFlow/config/install/commerce_checkout.commerce_checkout_flow.jw_custom_flow.yml
+
+langcode: cs
+status: true
+dependencies:
+  module:
+    - commerce_checkout
+    - commerce_payment
+id: jw_custom_flow
+label: 'JW Vlastní checkout test'
+plugin: multistep_default
+configuration:
+  display_checkout_progress: true
+  display_checkout_progress_breadcrumb_links: false
+  previous_label: 'Zpět'
+  next_label: 'Pokračovat'
+  steps:
+    kontaktni_udaje:
+      label: 'Kontaktní údaje'
+      next_label: 'Pokračovat k dopravě'
+      previous_label: 'Zpět'
+      has_sidebar: true
+      hidden: false
+    doprava:
+      label: 'Doprava'
+      next_label: 'Pokračovat k platbě'
+      previous_label: 'Zpět'
+      has_sidebar: true
+      hidden: false
+    platba:
+      label: 'Platba'
+      next_label: 'Pokračovat k přehledu'
+      previous_label: 'Zpět'
+      has_sidebar: true
+      hidden: false
+    prehled:
+      label: 'Přehled'
+      next_label: 'Dokončit objednávku'
+      previous_label: 'Zpět'
+      has_sidebar: false
+      hidden: false
+  panes:
+    contact_information:
+      step: kontaktni_udaje
+      weight: 10
+      configuration: {  }
+    billing_information:
+      step: kontaktni_udaje
+      weight: 20
+      configuration: {  }
+    shipping_information:
+      step: doprava
+      weight: 10
+      configuration: {  }
+    payment_information:
+      step: platba
+      weight: 10
+      configuration: {  }
+    order_summary:
+      step: prehled
+      weight: 10
+      configuration: {  }
+    payment_process:
+      step: prehled
+      weight: 20
+      configuration:
+        capture: true
+    completion_message:
+      step: prehled
+      weight: 30
+      configuration: {  }

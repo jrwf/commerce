@@ -1,0 +1,22 @@
+uuid: 5a0f4ab6-ad1c-4fb2-8c7c-43d6084a9b4f
+langcode: cs
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jw_cms_olivero
+_core:
+  default_config_hash: 5VBXsyvJSTQNtrh86WK8GN_FCaRtK03D1fjfZQnUvtU
+id: jw_cms_olivero_powered
+theme: jw_cms_olivero
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Běží na Drupalu'
+  label_display: '0'
+  provider: system
+visibility: {  }

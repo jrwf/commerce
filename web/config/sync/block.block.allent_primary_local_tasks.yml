@@ -1,0 +1,22 @@
+uuid: 49bed3b5-f3a4-4a29-ba84-3f65215be730
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - allent
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: allent_primary_local_tasks
+theme: allent
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Hlavní záložky'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

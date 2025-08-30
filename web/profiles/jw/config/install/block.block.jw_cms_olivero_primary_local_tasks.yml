@@ -1,0 +1,22 @@
+uuid: a42751c9-2cd3-4d9f-a58f-fa6f1ea1b2dd
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - jw_cms_olivero
+_core:
+  default_config_hash: A_KsAw1fyIvdBubmxkvtCtoSuV62cVV-p0RSPnvqc9U
+id: jw_cms_olivero_primary_local_tasks
+theme: jw_cms_olivero
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Hlavní záložky'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

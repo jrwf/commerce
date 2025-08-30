@@ -1,0 +1,10 @@
+# Main theme library.
+base:
+  version: 1.0
+  js:
+    js/allen.js: {}
+  css:
+    theme:
+      css/allent.css: {}
+      css/allent-front.css: {}
+      css/print.css: { media: print }

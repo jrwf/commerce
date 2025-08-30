@@ -1,0 +1,19 @@
+uuid: 35e03f4a-6e3d-427b-ac5f-d6e98f304ea9
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Obsah
+tags:
+  canonical_url: '[node:url]'
+  og_description: '[node:field_intro:value]'
+  og_image: '[node:field_uvodni_obrazek:entity:thumbnail]'
+  og_image_url: '[node:field_uvodni_obrazek:entity:url]'
+  og_site_name: '[site:name]'
+  og_title: '[current-page:title]'
+  og_type: '[node:content-type]'
+  og_url: '[current-page:url]'
+  robots: 'index, follow'
+  title: 'Název stránky'

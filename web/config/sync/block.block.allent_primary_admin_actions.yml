@@ -1,0 +1,20 @@
+uuid: 8a6aeb6b-a8a2-4401-a693-2fb8b4310e3d
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - allent
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: allent_primary_admin_actions
+theme: allent
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

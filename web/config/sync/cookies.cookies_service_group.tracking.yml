@@ -1,0 +1,11 @@
+uuid: 18f1ee4f-e176-4d4b-b456-286278d08722
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: _gYDe3qoEc6L5uYR6zhu5V-3ARLlyis9gl1diq7Tnf4
+id: tracking
+label: Sledování
+weight: 10
+title: 'Cookie pro sledování'
+details: 'Marketingové soubory cookie pocházejí od externích reklamních společností ("soubory cookie třetích stran") a slouží ke shromažďování informací o webových stránkách, které uživatel navštívil. Jejich účelem je vytvářet a zobrazovat uživateli obsah a reklamu zaměřenou na cílovou skupinu.'

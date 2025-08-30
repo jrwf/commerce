@@ -1,0 +1,58 @@
+uuid: 45a8ccb8-f2ef-4f1a-9428-6b090149ca20
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article.comment
+    - field.field.node.article.field_content
+    - field.field.node.article.field_galerie
+    - field.field.node.article.field_intro
+    - field.field.node.article.field_metatagy
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_uvodni_obrazek
+    - field.field.node.article.field_videa
+    - image.style.300_x_200
+    - node.type.article
+  module:
+    - media
+    - text
+    - user
+_core:
+  default_config_hash: O8PxzfG8DOHHRu6M23kwR6TDPq_MNfYQ10Mp367ICUQ
+id: node.article.teaser
+targetEntityType: node
+bundle: article
+mode: teaser
+content:
+  field_intro:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_uvodni_obrazek:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: 300_x_200
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  comment: true
+  field_content: true
+  field_galerie: true
+  field_metatagy: true
+  field_tags: true
+  field_videa: true
+  langcode: true

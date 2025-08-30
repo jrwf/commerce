@@ -1,0 +1,46 @@
+.cookiesjsr-banner {
+  bottom: 10%;
+  left: 0;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+  padding: 3rem 1rem;
+  border-radius: var(--border-radius);
+  align-items: flex-start;
+}
+
+.cookiesjsr-banner--info {
+  font-size: 1.6rem;
+  line-height: 160%;
+}
+
+.cookiesjsr-banner button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  background-color: white;
+  color: var(--primary-darker) !important;
+}
+
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+  .cookiesjsr-banner {
+    bottom: 20%;
+    left: 10%;
+    width: 80%;
+    height: auto;
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius);
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

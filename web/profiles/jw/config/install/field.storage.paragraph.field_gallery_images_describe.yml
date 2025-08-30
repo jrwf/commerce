@@ -1,0 +1,19 @@
+uuid: 880dc0c8-8bf3-4a9d-8540-ac483279ee88
+langcode: cs
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_gallery_images_describe
+field_name: field_gallery_images_describe
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

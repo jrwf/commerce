@@ -1,0 +1,11 @@
+uuid: b6475fba-1629-4a30-a30c-4dae9a700815
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: w9uS0Ktbh58ffWxW1ue_MKgB_he6iZPMx2Pc6tN4K4o
+id: social
+label: 'Pluginy sociálních sítí'
+weight: 20
+title: 'Pluginy sociálních sítí'
+details: 'Social media widgets provide additional content originally published on third party platforms.'

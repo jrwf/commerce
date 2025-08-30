@@ -1,0 +1,15 @@
+uuid: 0c0563aa-6363-40a7-a458-f54291c61fe2
+langcode: cs
+status: true
+dependencies: {  }
+name: '1500_1000'
+label: '1500 x 1000'
+effects:
+  d89fe972-ea93-4179-944f-7efedddf20ab:
+    uuid: d89fe972-ea93-4179-944f-7efedddf20ab
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1500
+      height: 1000
+      anchor: center-center

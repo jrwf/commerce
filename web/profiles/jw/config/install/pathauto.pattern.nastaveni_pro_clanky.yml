@@ -1,0 +1,22 @@
+uuid: 10bf6759-96ad-4ebf-b511-d1a41a993d8d
+langcode: cs
+status: true
+dependencies:
+  module:
+    - node
+id: nastaveni_pro_clanky
+label: 'Nastavení pro články.'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  2d1e533b-1635-4d3a-bc9c-dc2aa777a70f:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2d1e533b-1635-4d3a-bc9c-dc2aa777a70f
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+selection_logic: and
+weight: -5
+relationships: {  }

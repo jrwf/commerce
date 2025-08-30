@@ -1,0 +1,31 @@
+uuid: 168af1b5-bb19-4547-8ab8-08425429babb
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_galerie_s_popisky
+    - node.type.article
+    - paragraphs.paragraphs_type.gallery_images
+  module:
+    - entity_reference_revisions
+id: node.article.field_galerie_s_popisky
+field_name: field_galerie_s_popisky
+entity_type: node
+bundle: article
+label: 'Galerie s popisky'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      gallery_images: gallery_images
+    negate: 0
+    target_bundles_drag_drop:
+      gallery_images:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

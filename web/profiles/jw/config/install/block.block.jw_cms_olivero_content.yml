@@ -1,0 +1,22 @@
+uuid: 9934b194-286d-4510-968f-560951b54281
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - jw_cms_olivero
+_core:
+  default_config_hash: G4iNGvy_k2yNIEH_FJmbkvgBBar1etJIhKJYuygT7hU
+id: jw_cms_olivero_content
+theme: jw_cms_olivero
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Obsah hlavní stránky'
+  label_display: '0'
+  provider: system
+visibility: {  }

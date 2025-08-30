@@ -1,0 +1,7 @@
+name: 'JW Article'
+type: module
+description: 'Create new fields for content type article.'
+core_version_requirement: ^10 || ^11
+package: jw
+dependencies:
+  - jw

@@ -1,0 +1,21 @@
+uuid: f031a7cc-6806-4aae-96e4-37ce3734efa5
+langcode: cs
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatagy
+    - node.type.article
+  module:
+    - metatag
+id: node.article.field_metatagy
+field_name: field_metatagy
+entity_type: node
+bundle: article
+label: Metatagy
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,22 @@
+uuid: 5512b9ff-3cd3-47f7-bde2-328a70ac64d6
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - jw_cms_olivero
+_core:
+  default_config_hash: rUKMsaj4XvIHtU3kRiHIA6Rkn4IHzCkhTiUZudMkp14
+id: jw_cms_olivero_breadcrumbs
+theme: jw_cms_olivero
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Drobečková navigace'
+  label_display: '0'
+  provider: system
+visibility: {  }

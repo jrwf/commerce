@@ -1,0 +1,22 @@
+uuid: 7fbace71-b2b6-4433-9ab0-4e425b164382
+langcode: cs
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - woodyt
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: woodyt_breadcrumbs
+theme: woodyt
+region: content
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Drobečková navigace'
+  label_display: '0'
+  provider: system
+visibility: {  }

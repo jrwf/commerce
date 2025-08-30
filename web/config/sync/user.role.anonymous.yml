@@ -1,0 +1,32 @@
+uuid: 1fcfbc0c-0609-44a6-8eb1-38f4cb3c01fc
+langcode: cs
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - contact
+    - field_ui
+    - filter
+    - media
+    - search
+    - system
+    - taxonomy
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: Anonym
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'administer account settings'
+  - 'administer taxonomy_term display'
+  - 'change own username'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view media'

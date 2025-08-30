@@ -1,0 +1,10 @@
+uuid: 9c62b3f0-28bf-4e68-b8b1-a4223f022fdc
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bqZsN31T2n0UjcbyCpOPi9D2iO0sAOHR7FnEs9qMvaA
+id: comment
+label: 'Výchozí komentáře'
+target_entity_type_id: node
+description: 'Umožňuje komentování obsahu'

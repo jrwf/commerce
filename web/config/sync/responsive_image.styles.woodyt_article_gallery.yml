@@ -1,0 +1,40 @@
+uuid: 9e03d8d4-c66e-4061-9f88-9185a85d0886
+langcode: cs
+status: true
+dependencies:
+  config:
+    - image.style.300_x_200
+    - image.style.500_350
+    - image.style.800_500
+  theme:
+    - woodyt
+id: woodyt_article_gallery
+label: 'WoodyT - article gallery'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 300_x_200
+    breakpoint_id: woodyt.extra_large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 300_x_200
+    breakpoint_id: woodyt.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 300_x_200
+    breakpoint_id: woodyt.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: '800_500'
+    breakpoint_id: woodyt.small
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: '500_350'
+    breakpoint_id: woodyt.extra_small
+    multiplier: 1x
+breakpoint_group: woodyt
+fallback_image_style: 300_x_200

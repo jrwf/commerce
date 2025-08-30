@@ -1,0 +1,32 @@
+uuid: 60be93c3-7261-4086-aa26-5ebd99d48806
+langcode: cs
+status: true
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - stark
+  enforced:
+    config:
+      - search.page.help_search
+_core:
+  default_config_hash: 2ToeZLvlHKTeFY74gpgu1PejLoFyCECLO_gw6rAZwqw
+id: stark_help_search
+theme: stark
+region: content
+weight: -3
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Prohledat nápovědu'
+  label_display: visible
+  provider: search
+  page_id: help_search
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /admin/help

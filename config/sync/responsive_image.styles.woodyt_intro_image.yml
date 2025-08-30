@@ -1,0 +1,13 @@
+uuid: e6169d43-0182-4f97-8b52-2c71726393a8
+langcode: cs
+status: true
+dependencies:
+  config:
+    - image.style.600_370
+  theme:
+    - woodyt
+id: woodyt_intro_image
+label: 'WoodyT - intro image'
+image_style_mappings: {  }
+breakpoint_group: woodyt
+fallback_image_style: '600_370'

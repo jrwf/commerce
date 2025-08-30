@@ -1,0 +1,11 @@
+uuid: 7b1a0312-7934-4e24-af92-13060f04fa18
+langcode: cs
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Jv3uIJviBj7D282Qu1ZpEQwuOEb3lCcDvx-XVHeOJpw
+id: performance
+label: Výkon
+weight: 30
+title: 'Cookie pro výkon'
+details: 'Výkonnostní soubory cookie shromažďují souhrnné informace o tom, jak jsou naše webové stránky používány. Účelem je zlepšit jejich atraktivitu, obsah a funkčnost. Tyto soubory cookie nám pomáhají zjistit, zda, jak často a jak dlouho jsou navštěvovány jednotlivé podstránky našich webových stránek a o jaký obsah mají uživatelé zvláštní zájem. Zaznamenávají se také vyhledávané výrazy, země, region a (případně) město, z něhož se na webové stránky přistupuje, a podíl mobilních zařízení, která se k přístupu na webové stránky používají. Tyto informace používáme k sestavování statistických přehledů, které nám pomáhají přizpůsobit obsah našich webových stránek vašim potřebám a optimalizovat naši nabídku.'

@@ -1,0 +1,25 @@
+uuid: b7ed3c5f-86e7-475c-811a-99c93a8e8ee6
+langcode: cs
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - allent
+id: allent_paticka
+theme: allent
+region: footer
+weight: -7
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Patička
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

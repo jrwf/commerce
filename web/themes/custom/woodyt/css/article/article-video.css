@@ -1,0 +1,61 @@
+.field--name-field-videa {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.field--name-field-videa > .field__item {
+    margin: 0 0 1rem 0;
+}
+
+.field--name-field-media-oembed-video {
+    width: 100%; /* Nebo jiná požadovaná šířka */
+    max-width: 400px;
+    aspect-ratio: 16 / 9;
+}
+
+.field--name-field-media-oembed-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (min-width: 400px) {
+    .field--name-field-videa {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .field--name-field-videa > .field__item {
+        margin: 0 0 1rem 0;
+        flex: 0 0 calc((100% / 2) - 1rem);
+    }
+
+}
+
+/*
+@media screen and (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+*/
+
+@media screen and (min-width: 992px) {
+    .field--name-field-videa {
+        justify-content: flex-start;
+    }
+
+    .field--name-field-videa > .field__item {
+        margin: 0 1rem 1rem 0;
+        flex: 0 0 calc((100% / 3) - 1rem);
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

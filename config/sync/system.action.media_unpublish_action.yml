@@ -1,0 +1,13 @@
+uuid: 3ef72505-b9ad-409c-97f5-78eeda84af7d
+langcode: cs
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: CsK6TseQ2DatEbZgbd30swOlZ28_HHwAESU2LvEnWq0
+id: media_unpublish_action
+label: 'Skrýt média'
+type: media
+plugin: 'entity:unpublish_action:media'
+configuration: {  }

@@ -1,0 +1,20 @@
+uuid: 4514b443-55c3-438d-9111-cc9cca248f1c
+langcode: cs
+status: true
+dependencies:
+  module:
+    - cookies
+  theme:
+    - allent
+id: allent_cookiesui
+theme: allent
+region: content
+weight: 1
+provider: null
+plugin: cookies_ui_block
+settings:
+  id: cookies_ui_block
+  label: 'Cookies UI'
+  label_display: '0'
+  provider: cookies
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 1e4f10f4-54ec-4bbc-8dcd-c774e67f9f95
+langcode: cs
+status: true
+dependencies:
+  theme:
+    - woodyt
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: woodyt_primary_local_tasks
+theme: woodyt
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Hlavní záložky'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

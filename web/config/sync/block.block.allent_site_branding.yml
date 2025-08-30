@@ -1,0 +1,25 @@
+uuid: 5a310e59-63b7-4469-ba2c-d36f32e038e3
+langcode: cs
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - allent
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: allent_site_branding
+theme: allent
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

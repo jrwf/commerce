@@ -1,0 +1,7 @@
+woodym.contact:
+  path: '/kontakty'
+  defaults:
+    _title: 'Contact'
+    _controller: '\Drupal\woodym\Controller\ContactController::contactPage'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,13 @@
+uuid: a6309030-6070-43f0-bf26-b02356cb645f
+langcode: cs
+status: false
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: ZbXunWS_xAvMZXFfinyvClDAb_RCVLt7gAzE3v16E-Q
+id: user.full
+label: 'Uživatelský účet'
+description: ''
+targetEntityType: user
+cache: true
